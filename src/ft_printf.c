@@ -6,7 +6,7 @@
 /*   By: alfgarci <alfgarci@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 10:10:38 by alfgarci          #+#    #+#             */
-/*   Updated: 2022/09/25 05:03:58 by alfgarci         ###   ########.fr       */
+/*   Updated: 2022/09/25 05:16:59 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,9 @@ int	ft_printf(const char *str, ...)
 	{
 		if (str[i] == '%')
 		{
+			if (!str[i + 1])
+				break ;
 			num_char += flags(str[++i], args);
-			if (num_char || (!num_char && str[i + 1] == 's'))
-				i++;
 		}
 		else
 			num_char += ft_putchar(str[i]);
