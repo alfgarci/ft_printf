@@ -6,7 +6,7 @@
 /*   By: alfgarci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 04:07:58 by alfgarci          #+#    #+#             */
-/*   Updated: 2022/09/25 04:28:44 by alfgarci         ###   ########.fr       */
+/*   Updated: 2022/09/25 18:04:47 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,24 +29,17 @@ static int	get_numdigs(unsigned long int n)
 char	*ft_itoa_unsigned(unsigned long int n)
 {
 	int		i;
-	int		is_neg;
 	int		num_digs;
 	char	*cad;
 
 	i = -1;
-	is_neg = (n >= 0);
-	num_digs = get_numdigs(n * -(n < 0) + n * (n >= 0)) + (n < 0);
+	num_digs = get_numdigs(n);
 	cad = (char *)malloc((num_digs + 1) * sizeof(char));
 	if (!cad)
 		return (NULL);
-	if (n < 0)
-	{
-		cad[++i] = '-';
-		n *= -1;
-	}
 	while (++i < num_digs)
 	{
-		cad[num_digs - i - is_neg] = (n % 10) + 48;
+		cad[num_digs - i - 1] = (n % 10) + 48;
 		n /= 10;
 	}
 	cad[i] = '\0';
