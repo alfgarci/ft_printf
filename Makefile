@@ -6,7 +6,7 @@
 #    By: alfgarci <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/25 02:31:11 by alfgarci          #+#    #+#              #
-#    Updated: 2022/09/25 04:19:34 by alfgarci         ###   ########.fr        #
+#    Updated: 2022/09/25 18:10:46 by alfgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,6 @@ SRCS =	src/ft_printf.c \
 		src/ft_puthex.c \
 		src/ft_putmem.c \
 		src/ft_putunsig.c
-
-SRCSB = src/ft_printf.h
 
 OBJS 	=	${SRCS:.c=.o}
 
@@ -35,7 +33,7 @@ ${NAME}:	${OBJS}
 all:		${NAME}
 
 clean:
-		rm -f ${OBJS} ${OBJSB}
+		rm -f ${OBJS}
 
 fclean:		clean
 		rm -f ${NAME}
